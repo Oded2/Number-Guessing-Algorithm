@@ -26,6 +26,8 @@ def run_tests():
             else:
                 return counter
             counter += 1
+            if upper - lower <= 1:  # Prevent infinite loop
+                return counter  # The correct number must be either lower or upper
 
     sum_of_tries_random = 0
     sum_of_tries_avg = 0
