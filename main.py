@@ -10,7 +10,7 @@ def run_tests():
         num_of_tests = int(eval(num_tests_entry.get()))
         initial_lower = int(eval(lower_limit_entry.get()))
         initial_upper = int(eval(upper_limit_entry.get()))
-    except ValueError:
+    except SyntaxError:
         result_label.config(text="Please enter valid numbers.")
         return
 
