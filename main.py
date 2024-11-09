@@ -25,8 +25,7 @@ def run_tests():
             elif guess > num:
                 upper = guess
             else:
-                break
-        return counter
+                return counter
 
     sum_of_tries_random = 0
     sum_of_tries_avg = 0
