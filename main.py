@@ -7,9 +7,9 @@ def run_tests():
         return "{:,}".format(num)
 
     try:
-        num_of_tests = int(eval(num_tests_entry.get()))
-        initial_lower = int(eval(lower_limit_entry.get()))
-        initial_upper = int(eval(upper_limit_entry.get()))
+        num_of_tests = int(eval(num_tests_entry.get().replace("^", "**")))
+        initial_lower = int(eval(lower_limit_entry.get().replace("^", "**")))
+        initial_upper = int(eval(upper_limit_entry.get().replace("^", "**")))
     except SyntaxError:
         result_label.config(text="Please enter valid numbers.")
         return
