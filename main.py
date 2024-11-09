@@ -16,9 +16,8 @@ def run_tests():
 
     def test(lower: int, upper: int, random: bool):
         num = randint(lower, upper)
-        counter = 0
+        counter = 1
         while True:
-            counter += 1
             guess = randint(lower, upper) if random else round((lower + upper) / 2)
             if guess < num:
                 lower = guess
@@ -26,6 +25,7 @@ def run_tests():
                 upper = guess
             else:
                 return counter
+            counter += 1
 
     sum_of_tries_random = 0
     sum_of_tries_avg = 0
