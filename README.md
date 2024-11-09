@@ -1,4 +1,4 @@
-# Number Guessing Algorithm
+# Number Guessing Simulator
 
 This Python project simulates a guessing game where the computer tries to guess a number within a specified range. The
 user can choose between two guessing methods:
