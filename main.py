@@ -7,9 +7,9 @@ def run_tests():
         return "{:,}".format(num)
 
     try:
-        num_of_tests = int(num_tests_entry.get())
-        initial_lower = int(lower_limit_entry.get())
-        initial_upper = int(upper_limit_entry.get())
+        num_of_tests = int(eval(num_tests_entry.get()))
+        initial_lower = int(eval(lower_limit_entry.get()))
+        initial_upper = int(eval(upper_limit_entry.get()))
     except ValueError:
         result_label.config(text="Please enter valid numbers.")
         return
@@ -53,6 +53,7 @@ if __name__ == '__main__':
     root = tk.Tk()
     root.title("Guessing Test Simulator")
     root.geometry("300x300")
+    root.resizable(True, False)
     # Create and pack the UI elements
     tk.Label(root, text="Number of Tests:").grid(row=0, column=0, padx=10, pady=10)
     num_tests_entry = tk.Entry(root)
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     tk.Label(root, text="Upper Limit:").grid(row=2, column=0, padx=10, pady=10)
     upper_limit_entry = tk.Entry(root)
     upper_limit_entry.grid(row=2, column=1, padx=10, pady=10)
-    upper_limit_entry.insert(0, "300")  # Default value
+    upper_limit_entry.insert(0, "100")  # Default value
 
     # Button to run the tests
     run_button = tk.Button(root, text="Run Tests", command=run_tests)
